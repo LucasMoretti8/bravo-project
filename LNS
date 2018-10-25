@@ -1,0 +1,52 @@
+Caso de Uso: Efetuar login no site Netshoes
+
+
+•	Fluxo Principal: 
+o	P 1 – Usuário seleciona o item "Login" no menu “Entrar”  
+o	P 2 – O sistema carrega a tela de autenticação com duas opções "Já sou cliente" e "Criar conta"
+o	P 3 – Usuário entra com sua identificação e senha (E1)(A1)
+o	P 4 – O usuário confirma o acesso
+o	P 5 – O sistema valida o acesso.
+o	P 6 – O sistema carrega a página
+o	P 7 – O caso de uso é finalizado
+
+•	Fluxo Alternativo 1: O usuário não possui conta 
+o	A 1.1 – O usuário preenche o campo "Criar conta" com o seu endereço de e-mail
+o	A 1.1 – O usuário confirma o acesso
+o	A 1.2 – O usuário preenche os campos "Nome" e "Sobrenome"
+o	A 1.3 – O usuário informa o seu sexo
+o	A 1.4 – O usuário informa a sua idade
+o	A 1.5 – O usuário preenche o seu CPF(E2)
+o	A 1.6 – O usuário preenche o seu CEP(E3)
+o	A 1.7 – O sistema preenche o endereço do usuário 
+o	A 1.8 – O usuário preenche o número do endereço
+o	A 1.9 – O usuário preenche o "complemento" e/ou o "ponto de referencia" se necessário
+o	A 1.10 – O usuário preenche o número do telefone
+o	A 1.11 – O usuário confirma o seu endereço de e-mail
+o	A 1.12 – O usuário cadastra a sua senha
+o	A 1.13 – O usuário confirma o cadastro
+o	A 1.14 – O sistema carrega a página
+o	A 1.15 – O caso de uso é finalizado
+
+•	Fluxo de Exceção 1: As credenciais inseridas são inválidas 
+o	E 1.1 – O usuário seleciona opção “Esqueci minha senha”
+o	E 1.2 – O sistema informa "Um link para recuperação de senha foi enviado para seu email"
+o	E 1.3 – O usuário clica no link "Criar nova senha" no e-mail recebido 
+o	E 1.4 – O usuário preenche o campo "Digite sua nova senha"
+o	E 1.5 – O usuário confirma a alteração
+o	E 1.6 – O usuário recebe a confirmação
+o	E 1.7 – O sistema carrega a página
+o	E 1.8 – O caso de uso é finalizado
+
+•	Fluxo de Exceção 2: Certificação de CPF válido 
+o	E.2.1 – O sistema identifica que a o CPF fornecido não é válido 
+o	E.2.2 – O sistema emite a mensagem “Informe um CPF válido” 
+o	E.2.3 – O sistema retorna ao fluxo alternativo (A 1.5) para entrada do CPF do usuário.  
+
+
+•	Fluxo de Exceção 3: CEP inválido/não encontrado 
+o	E.3.1 – Usuário não entra com campo requerido 
+o	E.3.2 – Usuário entra com um CEP inválido 
+o	E.3.2 – Sistema não preenche automaticamente os dados do endereço
+o	E.3.2 – Usuário entra os dados do endereço
+o	E.3.3 – O sistema retorna ao fluxo alternativo (A 1.8)
