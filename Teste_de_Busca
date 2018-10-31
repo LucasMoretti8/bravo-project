@@ -1,48 +1,33 @@
-BNS
-
 Caso de Uso: Efetuar busca no site Netshoes
 •	Fluxo Principal: 
-o	P 1 – Usuário preenche com o termo "Patriot" no campo "Busca" na página principal  
-o	P 2 – O usuário refina a busca clicando no termo "Tênis" no menu "Tipo de produto"
-o	P 3 – O usuário refina a busca clicando no termo "Masculino" no menu "Gênero"
-o	P 4 – O usuário refina a busca clicando no termo "42" no menu "Tamanho"
-o	P 5 – O usuário refina a busca clicando no termo "Asics" no menu "Marca"
+o	P 1 – O usuário deverá preencher no campo busca, localizado na parte superior da página, o termo "Asics" e deverá clicar no símbolo de 'lupa' para executar a busca (E1)(E2)
+o	P 3 – O sistema carregará a página de produtos que se enquadram em tais filtros(E2)
+o	P 2 – O usuário deverá localizar o menu "Tipo de produto" no menu à esquerda, e dentro de tal menu, deverá clicar no termo "Tênis"
+o	P 3 – O sistema carregará a página de produtos que se enquadram em tais filtros(E2)
+o	P 3 – O usuário deverá loclaizar o menu "Gênero" no menu à esquerda, e dentro de tal menu, deverá clicar no termo "Masculino"
+O sistema carregará a página de produtos que se enquadram em tais filtros(E2)
+o	P 4 – O usuário deverá loclaizar o menu "Tamanho" no menu à esquerda, e dentro de tal menu, deverá clicar no termo "42"
+O sistema carregará a página de produtos que se enquadram em tais filtros(E2)
+o	P 4 – O usuário deverá loclaizar o menu "Marca" no menu à esquerda, e dentro de tal menu, deverá clicar no termo "Asics"
+O sistema carregará a página de produtos que se enquadram em tais filtros(E2)
 o	P 6 – O usuário seleciona o produto "Tênis Asics Patriot 8 Masculino" dentre as opções trazidas
-o	P 7 – O sistema carrega a página do produto
-o	P 8 – O usuário seleciona a opção de cor "Preto" no menu "Cor"(E1)(E3)
-o	P 9 – O usuário seleciona a opção de tamanho "42" no menu "Tamanho"(E2)(E3)
-o	P 10 – O usuário seleciona a opção "Comprar"
-o	P 11 – O usuário seleciona a opção "Concluir compra"(A1)
-o	P 12 – O caso de uso é finalizado
 
 
 
-•	Fluxo Alternativo 1: O usuário escolhe a opção "Continuar comprando"
-o	A 1.1 – Usuário preenche com o termo "Mochila esportiva" no campo "Busca" na página principal  
-o	A 1.2 – O usuário refina a busca clicando no termo "Mochila" no menu "Tipo de produto"
-o	A 1.3 – O usuário refina a busca clicando no termo "Masculino" no menu "Gênero"
-o	A 1.4 – O usuário refina a busca clicando no termo "Wilson" no menu "Marca"
-o	A 1.5 – O usuário seleciona o produto "Mochila Wilson Tour" dentre as opções trazidas
-o	A 1.6 – O sistema carrega a página do produto
-o	A 1.7 – O usuário seleciona a opção de cor "Preto" no menu "Cor"(E1)
-o	A 1.8 – O usuário seleciona a opção "Comprar"
-o	A 1.9 – O usuário seleciona a opção "Concluir compra"
-o	A 1.10 – O caso de uso é finalizado
+•	Fluxo de Exceção 1: O usuário executa uma pesquisa com o campo "Busca" vazio
+o	E.1.1 – O sistema não retorna qualquer página, sem qualquer alteraçao no navegador
+o	E.1.2 – O usuário deverá especificar o termo a ser pesquisado corretamente, e assim executar a pesquisa novamente
+o	E.1.3 – O sistema retorna ao fluxo principal
 
 
+•	Fluxo de Exceção 2: O usuário executa uma pesquisa com um termo de pesquisa aleatório e incorreto "aoijsdaoidjadioj"
+o	E.2.1 – O sistema retorna uma mensagem informando "NÃO FOI POSSÍVEL ENCONTRAR RESULTADOS PARA O TERMO PROCURADO"
+o	E.2.2 – O usuário deverá especificar o termo a ser pesquisado corretamente, e assim executar a pesquisa novamente
+o	E.2.3 – O sistema retorna ao fluxo principal
 
 
-•	Fluxo de Exceção 1: O sistema informa que a cor selecionada não está disponível 
-o	E.1.1 – O sistema informa que a cor selecionada não está disponível
-o	E.1.2 – O usuário seleciona a opção de cor "Preto e Branco" no menu "Cor"
-o	E.1.3 – O sistema retorna ao fluxo principal (P9)  
-
-•	Fluxo de Exceção 2: O sistema informa que o tamanho selecionado não está disponível 
-o	E.1.1 – O sistema informa que o tamanho selecionado não está disponível
-o	E.1.2 – O usuário seleciona a opção de tamanho "41" no menu "Tamanho"
-o	E.1.3 – O sistema retorna ao fluxo principal (P9)  
-
-•	Fluxo de Exceção 3: O sistema informa que o tamanho selecionado não está disponível na cor selecionada
-o	E.1.1 – O sistema informa que o tamanho selecionado não está disponível na cor selecionada
-o	E.1.2 – O usuário seleciona a opção de cor "Vermelho e Preto" no menu "Cor"
-o	E.1.3 – O sistema retorna ao fluxo principal (P9)  
+•	Fluxo de Exceção 3: O sistema retorna produtos que não condizem com os termos especificados 
+o	E.3.1 – O sistema retorna produtos que não condizem com o termos utilizados na pesquisa
+o	E.3.2 – O usuário deverá verificar se especificou corretamente o termo a ser empregado na pesquisa
+o	E.3.3 – Caso se mostre necessário, o usuário deverá corrigir o termo e pesquisar novamente
+o	E.3.4 – O sistema retorna ao fluxo principal
