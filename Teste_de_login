@@ -1,52 +1,112 @@
 Caso de Uso: Efetuar login no site Netshoes
-
-
 •	Fluxo Principal: 
-o	P 1 – Usuário seleciona o item "Login" no menu “Entrar”  
-o	P 2 – O sistema carrega a tela de autenticação com duas opções "Já sou cliente" e "Criar conta"
-o	P 3 – Usuário entra com sua identificação e senha (E1)(A1)
-o	P 4 – O usuário confirma o acesso
-o	P 5 – O sistema valida o acesso.
-o	P 6 – O sistema carrega a página
-o	P 7 – O caso de uso é finalizado
-
-•	Fluxo Alternativo 1: O usuário não possui conta 
-o	A 1.1 – O usuário preenche o campo "Criar conta" com o seu endereço de e-mail
-o	A 1.1 – O usuário confirma o acesso
-o	A 1.2 – O usuário preenche os campos "Nome" e "Sobrenome"
-o	A 1.3 – O usuário informa o seu sexo
-o	A 1.4 – O usuário informa a sua idade
-o	A 1.5 – O usuário preenche o seu CPF(E2)
-o	A 1.6 – O usuário preenche o seu CEP(E3)
-o	A 1.7 – O sistema preenche o endereço do usuário 
-o	A 1.8 – O usuário preenche o número do endereço
-o	A 1.9 – O usuário preenche o "complemento" e/ou o "ponto de referencia" se necessário
-o	A 1.10 – O usuário preenche o número do telefone
-o	A 1.11 – O usuário confirma o seu endereço de e-mail
-o	A 1.12 – O usuário cadastra a sua senha
-o	A 1.13 – O usuário confirma o cadastro
-o	A 1.14 – O sistema carrega a página
-o	A 1.15 – O caso de uso é finalizado
-
-•	Fluxo de Exceção 1: As credenciais inseridas são inválidas 
-o	E 1.1 – O usuário seleciona opção “Esqueci minha senha”
-o	E 1.2 – O sistema informa "Um link para recuperação de senha foi enviado para seu email"
-o	E 1.3 – O usuário clica no link "Criar nova senha" no e-mail recebido 
-o	E 1.4 – O usuário preenche o campo "Digite sua nova senha"
-o	E 1.5 – O usuário confirma a alteração
-o	E 1.6 – O usuário recebe a confirmação
-o	E 1.7 – O sistema carrega a página
-o	E 1.8 – O caso de uso é finalizado
-
-•	Fluxo de Exceção 2: Certificação de CPF válido 
-o	E.2.1 – O sistema identifica que a o CPF fornecido não é válido 
-o	E.2.2 – O sistema emite a mensagem “Informe um CPF válido” 
-o	E.2.3 – O sistema retorna ao fluxo alternativo (A 1.5) para entrada do CPF do usuário.  
+o	P 1 – Usuário deverá localizar o ícone "Entrar" no canto superior direito da página e posicionar o cursor do mouse sobre o ícone
+	aparecerá um neu drop down com a opção "Login"
+o	P 2 – o usuário deverá clicar em login
+o	P 3 – O sistema carrega a tela de autenticação com duas opções "Já sou cliente" e "Criar conta" (A1)
+o	P 4 – Usuário deverá preencher os campos abaixo de "Já sou cliente", no campo de identificação deverá preencher ou com o seu endereço de e-mail, CPF, ou CNPJ(	E1)(E2)
+o	P 5 – Usuário deverá preencher os campos abaixo de "Já sou cliente", no campo de senha deverá preencher com a sua senha pessoal já criada(E3)(E4)
+o	P 6 – O usuário deverá clicar então no botão "Acessar conta"
+o	P 7 – O sistema validará o acesso e carregará a página
+o	P 8 – O caso de uso é finalizado
 
 
-•	Fluxo de Exceção 3: CEP inválido/não encontrado 
-o	E.3.1 – Usuário não entra com campo requerido 
-o	E.3.2 – Usuário entra com um CEP inválido 
-o	E.3.2 – Sistema não preenche automaticamente os dados do endereço
-o	E.3.2 – Usuário entra os dados do endereço
-o	E.3.3 – O sistema retorna ao fluxo alternativo (A 1.8)
+•	Fluxo Alternativo 1: O usuário ainda não possui uma conta
+o	A 1.1 – O usuário deverá preencher o campo "Informe o seu e-mail" com o endereço de e-mail a ser utilizado em sua nova conta
+o	A 1.2 – O usuário deverá clicar em "Prosseguir"
+o	A 1.3 – O sistema carregará a página do formulário para preenchimento. Já configurado para "Pessoa Física"(A2)
+o	A 1.4 – O usuário deverá preencher o campo "Nome" com o nome a ser utilizado em sua conta
+o	A 1.5 – O usuário deverá preencher o campo "Sobrenome" com o sobrenome a ser utilizado em sua conta
+o	A 1.6 – O usuário deverpa inserir no menu dropdown "Dia", sobe "Data de nascimento" o dia da pessoa que utilizará a conta
+o	A 1.7 – O usuário deverpa inserir no menu dropdown "Mês", sobe "Data de nascimento" o mês da pessoa que utilizará a conta
+o	A 1.8 – O usuário deverpa inserir no menu dropdown "Ano", sobe "Data de nascimento" o ano da pessoa que utilizará a conta
+o	A 1.9 – O usuário deverá preencher o campo "CPF" com o CPF a ser utilizado em sua conta(E5)
+o	A 1.10 – O usuário deverá preencher o campo "CEP" com o CEP a ser utilizado em sua conta(E6)
+o	A 1.11 – O sistema preencherá automaticamente os campos "Tipo de endereço", "Nome da rua", "Bairro", "Estado", "Cidade"
+o	A 1.12 – O usuário deverá preencher o campo "Número" com o número do endereço a ser utilizado em sua conta
+o	A 1.13 – O usuário poderá preencher o campo "Complemento" com o complemento do endereço a ser utilizado em sua conta se necessário
+o	A 1.14 – O usuário poderá preencher o campo "Referência" com a referência do endereço a ser utilizado em sua conta se necessário
+o	A 1.15 – Na aba "Sobre a sua conta", o usuário deverá preencher o campo "Seu telefone" com o número de telefone a ser utilizado em sua conta
+o	A 1.16 – O usuário poderá preencher o campo "Outro telefone" com outro número de telefone a ser utilizado em sua conta se necessário
+o	A 1.17 – O usuário poderá marcar a opção "Quero acompanhar o andamento de meus pedidos via sms" caso opte por tal função
+o	A 1.18 – O usuário deverá preencher o campo "Seu e-mail" com o endereço de e-mail a ser utilizado em sua conta
+o	A 1.19 – O usuário deverá preencher o campo "Senha" com senha escolhida para ser utilizada em sua conta
+o	A 1.20 – O usuário poderá marcar a opção "Quero receber por e-mail ofertas e novidades das lojas do Grupo Netshoes. A frequência de envios pode variar de 		acordo com a interação do cliente." caso opte por tal função
+o	A 1.21 – O usuário deverá clicar em "Continuar"
+o	A 1.22 – O sistema validará as informações(E7)
+o	A 1.23 – O sistema carregará a página pricipal já com o usuário logado
+o	A 2.24 – O caso de uso é finalizado
+
+
+
+•	Fluxo Alternativo 2: O usuário é "Pessoa Jurídica"
+o	A 2.1 – O usuário deverá clicar na aba "Pessoa Jurídica"
+o	A 2.2 – O usuário deverá preencher o campo "Razão Social" com a razão social a ser utilizada em sua conta
+o	A 2.3 – O usuário deverá preencher o campo "Nome Fantasia com o nome fantasia a ser utilizado em sua conta
+o	A 2.4 – O usuário deverá preencher o campo "CNPJ" com o CNPJ a ser utilizado em sua conta
+o	A 2.5 – O usuário deverá preencher o campo "Inscrição Municipal" com a inscrição municipal a ser utilizada em sua conta
+o	A 2.6 – O usuário deverá preencher o campo "Inscrição Estadual" com a inscrição estadual a ser utilizada em sua conta
+o	A 2.7 – O usuário poderá marcar o campo "Isento" se assim optar por tal função
+o	A 2.8 – O usuário deverá preencher o campo "CEP" com o CEP a ser utilizado em sua conta(E5)
+o	A 2.9 – O sistema preencherá automaticamente os campos "Tipo de endereço", "Nome da rua", "Bairro", "Estado", "Cidade"
+o	A 2.10 – O usuário deverá preencher o campo "Número" com o número do endereço a ser utilizado em sua conta
+o	A 2.11 – O usuário poderá preencher o campo "Complemento" com o complemento do endereço a ser utilizado em sua conta se necessário
+o	A 2.12 – O usuário poderá preencher o campo "Referência" com a referência do endereço a ser utilizado em sua conta se necessário
+o	A 2.13 – Na aba "Sobre a sua conta", o usuário deverá preencher o campo "Seu telefone" com o número de telefone a ser utilizado em sua conta
+o	A 2.14 – O usuário poderá preencher o campo "Outro telefone" com outro número de telefone a ser utilizado em sua conta se necessário
+o	A 2.15 – O usuário poderá marcar a opção "Quero acompanhar o andamento de meus pedidos via sms" caso opte por tal função
+o	A 2.16 – O usuário deverá preencher o campo "Seu e-mail" com o endereço de e-mail a ser utilizado em sua conta
+o	A 2.17 – O usuário deverá preencher o campo "Senha" com senha escolhida para ser utilizada em sua conta
+o	A 2.18 – O usuário poderá marcar a opção "Quero receber por e-mail ofertas e novidades das lojas do Grupo Netshoes. A frequência de envios pode variar de 		acordo com a interação do cliente." caso opte por tal função
+o	A 2.19 – O usuário deverá clicar em "Continuar"
+o	A 2.20 – O sistema validará as informações(E7)
+o	A 2.21 – O sistema carregará a página pricipal já com o usuário logado
+o	A 2.22 – O caso de uso é finalizado
+
+
+
+
+•	Fluxo de Exceção 1: As informações do campo "e-mail, CPF, ou CNPJ" não foram inseridas
+o	E.1.1 – O sistema identifica que o campo não foi preenchido e informa "O campo E-mail, CPF ou CNPJ é obrigatório" 
+o	E.1.2 – O usuário deverá preencher corretamente o campo "e-mail, CPF, ou CNPJ" com a informação solicitada
+o	E.1.3 – O sistema valida as informações inseridas
+o	E.1.4 – O sistema retorna ao fluxo principal (P5) 
+
+•	Fluxo de Exceção 2: As informações do campo "e-mail, CPF, ou CNPJ" foram inseridas incorretamente
+o	E.2.1 – O sistema identifica que o campo foi preenchido incorretamente e informa "Usuário ou senha inválidos" 
+o	E.2.2 – O usuário deverá preencher corretamente o campo "e-mail, CPF, ou CNPJ" com a informação solicitada
+o	E.2.3 – O sistema valida as informações inseridas
+o	E.2.4 – O sistema retorna ao fluxo principal (P5) 
+
+
+•	Fluxo de Exceção 3: As informações do campo "Senha" não foram inseridas
+o	E.3.1 – O sistema identifica que o campo não foi preenchido e informa "O campo Senha é obrigatório." 
+o	E.3.2 – O usuário deverá preencher corretamente o campo "Senha" com a informação solicitada
+o	E.3.3 – O sistema valida as informações inseridas
+o	E.3.4 – O sistema retorna ao fluxo principal (P6) 
+
+•	Fluxo de Exceção 4: As informações de e-mail, CPF, ou CNPJ foram inseridas incorretamente
+o	E.4.1 – O sistema identifica que o campo foi preenchido incorretamente e informa "Usuário ou senha inválidos" 
+o	E.4.2 – O usuário deverá preencher corretamente o campo "Senha" com a informação solicitada
+o	E.4.3 – O sistema valida as informações inseridas
+o	E.4.4 – O sistema retorna ao fluxo principal (P6) 
+
+
+•	Fluxo de Exceção 5: As informações do campo "CPF" foram inseridas incorretamente
+o	E.5.1 – O sistema identifica que o campo foi preenchido incorretamente e informa "Digite um CPF válido" 
+o	E.5.2 – O usuário deverá preencher corretamente o campo "CPF" com a informação solicitada
+o	E.5.3 – O sistema valida as informações inseridas
+o	E.5.4 – O sistema retorna ao fluxo alternativo (A.1.9) 
+
+
+•	Fluxo de Exceção 6: As informações do campo "CEP" foram inseridas incorretamente
+o	E.6.1 – O sistema identifica que o campo foi preenchido incorretamente e informa "Ops! Que tal verificar este campo" 
+o	E.6.2 – O usuário deverá preencher corretamente o campo "CEP" com a informação solicitada
+o	E.6.3 – O sistema valida as informações inseridas
+o	E.6.4 – O sistema retorna ao fluxo alternativo (A.1.10) 
+
+•	Fluxo de Exceção 7: As informações dos campos "Nome", "Sobrenome", "Sexo", "Data de Nascimento", "Nome da rua", "Número", "Bairro", "Estado", "Cidade", "Seu 	telefone", "Seu e-mail", "Senha" não foram preenchidos
+o	E.7.1 – O sistema identifica que o campo foi preenchido incorretamente e informa "O campo é obrigatório." 
+o	E.7.2 – O usuário deverá preencher corretamente o campo informado na mensagem de erro com a informação solicitada
+o	E.7.3 – O sistema valida as informações inseridas
+o	E.7.4 – O sistema retorna ao fluxo alternativo (A.1.10)
